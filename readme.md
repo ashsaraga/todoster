@@ -4,6 +4,9 @@
 
 ## v0.1.0
 
-- Decide on v0 tools
+### Step 1
 - Design layout
 - basic html/css/js
+
+### Step 2
+- Decide on v0 tools

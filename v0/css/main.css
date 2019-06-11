@@ -1,0 +1,198 @@
+:root {
+  --deepspace: #1a1a23;
+  --asteroid: #94949c;
+}
+
+html {
+  background-color: var(--deepspace);
+}
+
+.main {
+  height: 100vh;
+  left: 0;
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  width: 100vw;
+}
+
+.list {
+  height: 100vh;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: calc(30vw - .05rem);
+}
+
+.listHeader {
+  margin: .5rem;
+  padding: .25rem 1rem;
+}
+.listHeader span {
+  padding-right: .5rem;
+}
+.listHeader h3 {
+  letter-spacing: 0.0125rem;
+  margin: 0;
+}
+
+.calendar {
+  height: 100vh;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: calc(70vw - .05rem);
+}
+
+.monthTabs {
+  background-color: var(--deepspace);
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  height: 2.39941rem;
+  justify-content: flex-start;
+  margin: 0;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  padding: .25rem .5rem 0;
+  min-width: 100%;
+  width: auto;
+}
+.monthTabs::-webkit-scrollbar { height: 0 !important; width: 0 !important; }
+.monthTabs { overflow: -moz-scrollbars-none; }
+.monthTabs { -ms-overflow-style: none; }
+
+.monthTab {
+  cursor: pointer;
+  flex:  none;
+  margin: 0;
+  opacity: .8;
+  padding: .25rem .75rem;
+}
+.monthTab.selected,
+.monthTab:hover,
+.monthTab:active {
+  border-bottom: 0.15rem solid var(--seafoam);
+  opacity: 1;
+}
+.monthTab h5 {
+  font-weight: 500;
+  letter-spacing: 0.03125rem;
+  margin: .25rem;
+}
+
+.dayLabels {
+  background-color: var(--asteroid);
+  height: 1.25rem;
+  margin: 0;
+  padding-top: .25rem;
+  text-align: center;
+  width: 100%;
+}
+.dayLabel {
+  width: calc(100% / 7);
+}
+
+.monthGrid {
+  bottom: 0;
+  height: calc(100vh - 2.39941rem - 1.25rem);
+  overflow-x: hidden;
+  overflow-y: scroll;
+  position: absolute;
+  width: 100%;
+}
+
+.gridOverlay {
+  bottom: 0;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  height: calc(100% - 1.25rem - 2.39941rem);
+  justify-content: space-between;
+  position: fixed;
+  right: 0;
+  width: calc(70vw - .05rem);
+  z-index: 1;
+}
+.bit {
+  background-color: var(--asteroid);
+  height: 100%;
+  width: .075rem;
+}
+.bit:first-of-type,
+.bit:last-of-type {
+  opacity: 0;
+  width: 0;
+}
+
+.weekGrid {
+  overflow-y: scroll;
+  position: relative;
+  width: 100%;
+  z-index: 2;
+}
+
+.weekRow {
+  border-bottom: .075rem solid var(--asteroid);
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  height: calc((70vw - .05rem) / 7);
+  width: 100%;
+}
+.weekRow:last-of-type {
+  border: 0;
+}
+
+.weekDay {
+  position: relative;
+  width: calc(100% / 7);
+}
+.weekDay.past {
+  background-color: var(--evening);
+  opacity: .6;
+}
+.weekDay.future {
+  background-color: var(--evening);
+  opacity: .6;
+}
+
+.date {
+  margin: 0;
+  padding: .25rem;
+}
+
+.calTasks {
+  bottom: 0;
+  height: calc(100% - 1.6875rem);
+  left: 0;
+  list-style: none;
+  margin: 0;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  padding: .25rem .25rem .25rem .5rem;
+  position: absolute;
+  width: 100%;
+}
+
+..monthTabs::-webkit-scrollbar { height: 0 !important; width: 0 !important; }::-webkit-scrollbar { height: 0 !important; width: 0 !important; }
+..monthTabs { overflow: -moz-scrollbars-none; } { overflow: -moz-scrollbars-none; }
+..monthTabs { -ms-overflow-style: none; } { -ms-overflow-style: none; }
+
+.taskItem {
+  font-size: 0.75rem;
+  margin: 0 0 .25rem 0;
+  padding-left: 1rem;
+  position: relative;
+}
+.taskItem::before {
+  background-color: var(--daybreak);
+  border-radius: 50%;
+  content: "";
+  display: block;
+  height: 0.25rem;
+  left: 0.25rem;
+  position: absolute;
+  top: 0.3125rem;
+  width: 0.25rem;
+}
